@@ -20,53 +20,54 @@ while bye == 0:
        # r.adjust_for_ambient_noise(source)
        print ("Start Listening...")
        audio = r.listen(source, phrase_time_limit = 4)
+       cmd = r.recognize_google(audio)
    
    print ("Done Listening...")
    try:
-       print("You said " + r.recognize_google(audio))
-       if r.recognize_google(audio) == "begin test":
+       print("You said " + cmd)
+       if cmd == "begin test":
            sock.sendall("start".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "turn on the light":
+       elif cmd == "turn on the light":
            sock.sendall("led_on".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "turn off the light":
+       elif cmd == "turn off the light":
            sock.sendall("led_off".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "Red Cross":
+       elif cmd == "Red Cross":
            sock.sendall("lcd_red".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "green grass":
+       elif cmd == "green grass":
            sock.sendall("lcd_green".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "sky is blue":
+       elif cmd == "sky is blue":
            sock.sendall("lcd_blue".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "Yellow River":
+       elif cmd == "Yellow River":
            sock.sendall("lcd_yellow".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "cyan color":
+       elif cmd == "cyan color":
            sock.sendall("lcd_cyan".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "purple mountain":
+       elif cmd == "purple mountain":
            sock.sendall("lcd_purple".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "White House":
+       elif cmd == "White House":
            sock.sendall("lcd_white".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "blackjack":
+       elif cmd == "blackjack":
            sock.sendall("lcd_black".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "stay in the middle":
+       elif cmd == "stay in the middle":
            sock.sendall("servo_middle".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "turn right":
+       elif cmd == "turn right":
            sock.sendall("servo_right".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "turn left":
+       elif cmd == "turn left":
            sock.sendall("servo_left".encode())
            print(sock.recv(1024))
-       elif r.recognize_google(audio) == "stop":
+       elif cmd == "stop":
            sock.sendall("servo_stop".encode())
            print(sock.recv(1024))
            sock.sendall("bye".encode())
