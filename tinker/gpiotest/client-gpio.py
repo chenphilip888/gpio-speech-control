@@ -20,10 +20,10 @@ while bye == 0:
        # r.adjust_for_ambient_noise(source)
        print ("Start Listening...")
        audio = r.listen(source, phrase_time_limit = 4)
-       cmd = r.recognize_google(audio)
    
    print ("Done Listening...")
    try:
+       cmd = r.recognize_google(audio)
        print("You said " + cmd)
        if cmd == "begin test":
            sock.sendall("start".encode())
@@ -43,7 +43,7 @@ while bye == 0:
        elif cmd == "sky is blue":
            sock.sendall("lcd_blue".encode())
            print(sock.recv(1024))
-       elif cmd == "Yellow River":
+       elif cmd == "Yellow Pages":
            sock.sendall("lcd_yellow".encode())
            print(sock.recv(1024))
        elif cmd == "cyan color":

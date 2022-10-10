@@ -157,7 +157,7 @@ To stop the gpio test, speak to Host PC mic with "stop"
    Connect gpio pin  6 to led ground.
 
 2. i2c lcd test.
-   Speak to Host PC mic with "Red Cross", "green grass", "sky is blue", "Yellow River", "cyan color", "purple mountain", "White House" or "blackjack"
+   Speak to Host PC mic with "Red Cross", "green grass", "sky is blue", "Yellow Pages", "cyan color", "purple mountain", "White House" or "blackjack"
    Connect gpio pin  3 to lcd display SDA. ( rpi4b i2c-1 ).
    Connect gpio pin  5 to lcd display SCL.
    Connect gpio pin  3 to lcd display SDA. ( radxa i2c-7 ).
